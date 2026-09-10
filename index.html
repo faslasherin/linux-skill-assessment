@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Skill Assessment - RHCSA & Linux Administration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f8fafc'/><text y='.9em' font-size='80' x='50%' text-anchor='middle' fill='%232563eb'>🐧</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <svg viewBox="0 0 40 40" class="logo-icon">
+                    <rect x="2" y="2" width="36" height="36" rx="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <rect x="8" y="10" width="24" height="2" rx="1" fill="currentColor"/>
+                    <rect x="8" y="16" width="24" height="2" rx="1" fill="currentColor" opacity="0.7"/>
+                    <rect x="8" y="22" width="16" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+                    <rect x="8" y="28" width="20" height="2" rx="1" fill="currentColor" opacity="0.3"/>
+                </svg>
+                <span class="logo-text">Linux Skill Assessment</span>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link">Overview</a>
+                <a href="#form-section" class="nav-link nav-link-cta">Start Assessment</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="badge">
+                    <svg viewBox="0 0 24 24" class="badge-icon">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 9.5l10 5 10-5M2 14l10 5 10-5" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Professional Certification Prep
+                </div>
+                <h1 class="hero-title">Linux Skill Assessment</h1>
+                <p class="hero-subtitle">RHCSA & Linux Administration</p>
+                <p class="hero-description">
+                    Test your Linux administration knowledge with a comprehensive 25-question assessment covering essential RHCSA and Linux system administration topics.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">25</span>
+                        <span class="stat-label">Questions</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">60%</span>
+                        <span class="stat-label">Passing Score</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">~30 min</span>
+                        <span class="stat-label">Duration</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="form-section" class="form-section">
+            <div class="form-card">
+                <div class="form-header">
+                    <svg viewBox="0 0 48 48" class="form-icon">
+                        <circle cx="24" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 40c0-6.627 5.373-12 12-12s12 5.373 12 12" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <h2>Student Information</h2>
+                    <p>Enter your details to begin the assessment</p>
+                </div>
+                <form id="student-form" class="student-form">
+                    <div class="form-group">
+                        <label for="full-name">
+                            <svg viewBox="0 0 20 20" class="label-icon">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                            </svg>
+                            Full Name
+                        </label>
+                        <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required autocomplete="name">
+                        <span class="error-message" id="name-error">Please enter your full name</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            <svg viewBox="0 0 20 20" class="label-icon">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            Email Address
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="email">
+                        <span class="error-message" id="email-error">Please enter a valid email address</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <svg viewBox="0 0 20 20" class="btn-icon">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                        </svg>
+                        Start Assessment
+                    </button>
+                </form>
+                <div class="form-footer">
+                    <p>By starting the assessment, you agree to the terms and conditions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topics-section">
+            <h3 class="section-title">Topics Covered</h3>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <svg viewBox="0 0 24 24" class="topic-icon">
+                        <path d="M4 4h16v16H4V4zm3 3v10h10V7H7z"/>
+                    </svg>
+                    <span>Filesystem & Storage</span>
+                    <small>LVM, Partitioning, Mounting, Swap</small>
+                </div>
+                <div class="topic-card">
+                    <svg viewBox="0 0 24 24" class="topic-icon">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v4M12 19v4M1 12h4M19 12h4"/>
+                    </svg>
+                    <span>System Administration</span>
+                    <small>Users, Groups, Permissions, ACL</small>
+                </div>
+                <div class="topic-card">
+                    <svg viewBox="0 0 24 24" class="topic-icon">
+                        <rect x="2" y="3" width="20" height="14" rx="2"/>
+                        <path d="M8 21h8M12 17v4"/>
+                    </svg>
+                    <span>Networking</span>
+                    <small>SSH, Firewall, NFS, Network Config</small>
+                </div>
+                <div class="topic-card">
+                    <svg viewBox="0 0 24 24" class="topic-icon">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 12l10 5 10-5"/>
+                        <path d="M2 17l10 5 10-5"/>
+                    </svg>
+                    <span>Services & Processes</span>
+                    <small>systemd, Cron, Boot Process, GRUB</small>
+                </div>
+                <div class="topic-card">
+                    <svg viewBox="0 0 24 24" class="topic-icon">
+                        <path d="M9 11H7v2h2v-1h1v-1z"/>
+                        <path d="M13 11h-2v2h2v-1h1v1h-1v1z"/>
+                        <path d="M9 13H7v6h2v-6h1v-2h2v2h-1z"/>
+                        <path d="M9 3H7v18h2V3h1V1h2V3h-1z"/>
+                    </svg>
+                    <span>Security</span>
+                    <small>SELinux, Sudo, SSH Keys, Firewall</small>
+                </div>
+                <div class="topic-card">
+                    <svg viewBox="0 0 24 24" class="topic-icon">
+                        <path d="M4 4h16v16H4V4z"/>
+                        <path d="M9 4v16M15 4v16M4 9h16M4 15h16"/>
+                    </svg>
+                    <span>Tools & Scripting</span>
+                    <small>vim, Shell Scripting, Package Mgmt</small>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Linux Skill Assessment. For educational purposes only.</p>
+        </div>
+    </footer>
+
+    <script src="js/questions.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
