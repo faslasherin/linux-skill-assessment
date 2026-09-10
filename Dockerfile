@@ -7,15 +7,27 @@ COPY js/questions.js /usr/share/nginx/html/js/
 COPY js/app.js /usr/share/nginx/html/js/
 COPY assets/README.md /usr/share/nginx/html/assets/
 
-# Configure Nginx for OpenShift
-RUN sed -i 's/listen       80;/listen       8080;/' /etc/nginx/conf.d/default.conf \
-    && mkdir -p /var/cache/nginx/client_temp \
-    && mkdir -p /var/cache/nginx/proxy_temp \
-    && mkdir -p /var/cache/nginx/fastcgi_temp \
-    && mkdir -p /var/cache/nginx/uwsgi_temp \
-    && mkdir -p /var/cache/nginx/scgi_temp \
-    && chgrp -R 0 /var/cache/nginx /var/run /var/log/nginx \
-    && chmod -R g=u /var/cache/nginx /var/run /var/log/nginx
+# OpenShift-compatible Nginx configuration
+RUN printf '%s\n' \
+'pid /tmp/nginx.pid;' \
+'events {}' \
+'http {' \
+'    include /etc/nginx/mime.types;' \
+'    default_type application/octet-stream;' \
+'    access_log /dev/stdout;' \
+'    error_log /dev/stderr;' \
+'    client_body_temp_path /tmp/client_temp;' \
+'    proxy_temp_path /tmp/proxy_temp;' \
+'    fastcgi_temp_path /tmp/fastcgi_temp;' \
+'    uwsgi_temp_path /tmp/uwsgi_temp;' \
+'    scgi_temp_path /tmp/scgi_temp;' \
+'    server {' \
+'        listen 8080;' \
+'        server_name _;' \
+'        root /usr/share/nginx/html;' \
+'        index index.html;' \
+'    }' \
+'}' > /etc/nginx/nginx.conf
 
 EXPOSE 8080
 
