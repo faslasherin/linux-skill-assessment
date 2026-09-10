@@ -1,11 +1,5 @@
 FROM nginx:alpine
 
-# OpenShift-compatible static Nginx container
-# - Runs as non-root (OpenShift assigns arbitrary UID)
-# - Listens on port 8080 (OpenShift route standard)
-# - All writable paths use /tmp (PID, temp files, logs)
-# - Static website files served from /usr/share/nginx/html
-
 # Remove default config and create OpenShift-compatible nginx.conf
 RUN rm -f /etc/nginx/conf.d/default.conf && \
     mkdir -p /tmp/client_temp /tmp/proxy_temp /tmp/fastcgi_temp /tmp/uwsgi_temp /tmp/scgi_temp && \
@@ -41,6 +35,9 @@ RUN rm -f /etc/nginx/conf.d/default.conf && \
     '    }' \
     '}' > /etc/nginx/nginx.conf
 
+# Fix permissions on /var/cache/nginx so arbitrary UIDs can write to it if needed
+RUN chown -R 101:0 /var/cache/nginx && chmod -R g+w /var/cache/nginx
+
 # Copy website files
 COPY index.html quiz.html result.html /usr/share/nginx/html/
 COPY css/ /usr/share/nginx/html/css/
@@ -49,8 +46,5 @@ COPY assets/ /usr/share/nginx/html/assets/
 
 EXPOSE 8080
 
-# Nginx runs in foreground (required for containers)
-# OpenShift handles the UID - no USER directive needed
-ENTRYPOINT ["nginx"]
-CMD ["-g", "daemon off;"]
-
+# Bypassing the default image docker-entrypoint.sh script entirely to avoid read-only errors
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
