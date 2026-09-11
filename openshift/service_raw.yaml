@@ -1,0 +1,98 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      app.openshift.io/vcs-ref: ""
+      app.openshift.io/vcs-uri: https://github.com/faslasherin/linux-skill-assessment
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: "2026-09-10T11:00:42Z"
+    labels:
+      app: linux-skill-assessment
+      app.kubernetes.io/component: linux-skill-assessment
+      app.kubernetes.io/instance: linux-skill-assessment
+      app.kubernetes.io/name: linux-skill-assessment
+      app.kubernetes.io/part-of: linux-skill-assessment-app
+    name: linux-skill-assessment
+    namespace: faslasherin-dev
+    resourceVersion: "6078764661"
+    uid: ef81117e-90dd-4d47-aa8b-19bb31692dc3
+  spec:
+    clusterIP: 172.30.169.42
+    clusterIPs:
+    - 172.30.169.42
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: linux-skill-assessment
+      deployment: linux-skill-assessment
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      service.alpha.openshift.io/serving-cert-secret-name: model-serving-proxy-tls
+      service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1733253927
+      service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1733253927
+    creationTimestamp: "2026-09-09T08:56:05Z"
+    labels:
+      app.kubernetes.io/instance: modelmesh-controller
+      app.kubernetes.io/managed-by: modelmesh-controller
+      app.kubernetes.io/name: modelmesh-controller
+      modelmesh-service: modelmesh-serving
+    name: modelmesh-serving
+    namespace: faslasherin-dev
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Namespace
+      name: faslasherin-dev
+      uid: 264b4673-383f-4d1c-a12b-c9d8844c231a
+    resourceVersion: "6073571242"
+    uid: 79855eec-cce3-4d5d-8cd0-a1c7d7a5b3cb
+  spec:
+    clusterIP: None
+    clusterIPs:
+    - None
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: grpc
+      port: 8033
+      protocol: TCP
+      targetPort: grpc
+    - name: http
+      port: 8008
+      protocol: TCP
+      targetPort: http
+    - name: https
+      port: 8443
+      protocol: TCP
+      targetPort: https
+    - name: prometheus
+      port: 2112
+      protocol: TCP
+      targetPort: prometheus
+    selector:
+      modelmesh-service: modelmesh-serving
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""

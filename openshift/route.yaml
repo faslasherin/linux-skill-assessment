@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: linux-skill-assessment
+  namespace: faslasherin-dev
+  labels:
+    app: linux-skill-assessment
+    app.kubernetes.io/component: linux-skill-assessment
+    app.kubernetes.io/instance: linux-skill-assessment
+    app.kubernetes.io/name: linux-skill-assessment
+    app.kubernetes.io/part-of: linux-skill-assessment-app
+spec:
+  host: linux-skill-assessment-faslasherin-dev.apps.rm2.thpm.p1.openshiftapps.com
+  port:
+    targetPort: 8080-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: linux-skill-assessment
+    weight: 100
+  wildcardPolicy: None

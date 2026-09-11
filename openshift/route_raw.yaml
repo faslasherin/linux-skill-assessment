@@ -1,0 +1,47 @@
+apiVersion: v1
+items:
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      app.openshift.io/vcs-ref: ""
+      app.openshift.io/vcs-uri: https://github.com/faslasherin/linux-skill-assessment
+      openshift.io/generated-by: OpenShiftWebConsole
+      openshift.io/host.generated: "true"
+    creationTimestamp: "2026-09-10T11:00:42Z"
+    generation: 1
+    labels:
+      app: linux-skill-assessment
+      app.kubernetes.io/component: linux-skill-assessment
+      app.kubernetes.io/instance: linux-skill-assessment
+      app.kubernetes.io/name: linux-skill-assessment
+      app.kubernetes.io/part-of: linux-skill-assessment-app
+    name: linux-skill-assessment
+    namespace: faslasherin-dev
+    resourceVersion: "6078764676"
+    uid: 4a08e2d4-7529-434a-80cf-8fdb33d35f7e
+  spec:
+    host: linux-skill-assessment-faslasherin-dev.apps.rm2.thpm.p1.openshiftapps.com
+    port:
+      targetPort: 8080-tcp
+    tls:
+      insecureEdgeTerminationPolicy: Redirect
+      termination: edge
+    to:
+      kind: Service
+      name: linux-skill-assessment
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2026-09-10T11:00:42Z"
+        status: "True"
+        type: Admitted
+      host: linux-skill-assessment-faslasherin-dev.apps.rm2.thpm.p1.openshiftapps.com
+      routerCanonicalHostname: router-default.apps.rm2.thpm.p1.openshiftapps.com
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""

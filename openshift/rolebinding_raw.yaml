@@ -1,0 +1,289 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2026-09-09T08:56:08Z"
+    name: admin-dedicated-admins
+    namespace: faslasherin-dev
+    resourceVersion: "6073571360"
+    uid: 71ff93cb-491a-4c40-91a5-d96374c28f97
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: admin
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: dedicated-admins
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    name: admin-system:serviceaccounts:dedicated-admin
+    namespace: faslasherin-dev
+    resourceVersion: "6073571213"
+    uid: d4e9818f-6e57-46f8-af70-490e479fc936
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: admin
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: system:serviceaccounts:dedicated-admin
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    name: alert-routing-edit-dedicated-admins
+    namespace: faslasherin-dev
+    resourceVersion: "6073571223"
+    uid: b7b1e372-2539-4b1d-ba3b-5fa205364dc2
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: alert-routing-edit
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: dedicated-admins
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"rbac.authorization.k8s.io/v1","kind":"RoleBinding","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"crtadmin-pods","namespace":"faslasherin-dev"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"Role","name":"exec-pods"},"subjects":[{"apiGroup":"rbac.authorization.k8s.io","kind":"Group","name":"crtadmin-users-view"}]}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: crtadmin-pods
+    namespace: faslasherin-dev
+    resourceVersion: "6073571199"
+    uid: 290babf1-958b-4efc-b2fd-1a617fdd1829
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: exec-pods
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: crtadmin-users-view
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"rbac.authorization.k8s.io/v1","kind":"RoleBinding","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"crtadmin-view","namespace":"faslasherin-dev"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"view"},"subjects":[{"apiGroup":"rbac.authorization.k8s.io","kind":"Group","name":"crtadmin-users-view"}]}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: crtadmin-view
+    namespace: faslasherin-dev
+    resourceVersion: "6073571184"
+    uid: 83f84f04-a095-4eba-9ba4-668bddddc45c
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: view
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: crtadmin-users-view
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2026-09-09T08:56:08Z"
+    name: dedicated-admins-project-dedicated-admins
+    namespace: faslasherin-dev
+    resourceVersion: "6073571344"
+    uid: 8f194a94-1d08-49e8-bfbb-b7ecefd99af9
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: dedicated-admins-project
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: dedicated-admins
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    name: dedicated-admins-project-system:serviceaccounts:dedicated-admin
+    namespace: faslasherin-dev
+    resourceVersion: "6073571189"
+    uid: 492c6906-350d-4886-ab4d-023682cdbe33
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: dedicated-admins-project
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: system:serviceaccounts:dedicated-admin
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"rbac.authorization.k8s.io/v1","kind":"RoleBinding","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"faslasherin-edit","namespace":"faslasherin-dev"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"edit"},"subjects":[{"kind":"User","name":"faslasherin"}]}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: faslasherin-edit
+    namespace: faslasherin-dev
+    resourceVersion: "6073571284"
+    uid: 2661d042-4ba8-4f3e-a0a4-156f3c87de89
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: edit
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: faslasherin
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"rbac.authorization.k8s.io/v1","kind":"RoleBinding","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"faslasherin-rbac-edit","namespace":"faslasherin-dev"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"Role","name":"rbac-edit"},"subjects":[{"kind":"User","name":"faslasherin"}]}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: faslasherin-rbac-edit
+    namespace: faslasherin-dev
+    resourceVersion: "6073571277"
+    uid: ce5cb22d-265e-4364-adf3-6066c800df23
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: rbac-edit
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: faslasherin
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2026-09-11T06:46:01Z"
+    name: linux-skill-assessment-rolebinding
+    namespace: faslasherin-dev
+    resourceVersion: "6082613887"
+    uid: 42979c1e-20c3-4deb-9bbf-4618ed5c26b0
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: linux-skill-assessment-role
+  subjects:
+  - kind: ServiceAccount
+    name: linux-skill-assessment-sa
+    namespace: faslasherin-dev
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2026-09-09T08:57:34Z"
+    name: openshift-pipelines-edit
+    namespace: faslasherin-dev
+    ownerReferences:
+    - apiVersion: operator.tekton.dev/v1alpha1
+      blockOwnerDeletion: true
+      controller: true
+      kind: TektonInstallerSet
+      name: rhosp-rbac-zfpkg
+      uid: f962e547-7b5b-4ccb-8e97-03e46d74dff2
+    resourceVersion: "6073576204"
+    uid: 2ee9d46d-0506-4901-a392-ea66503391d3
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: edit
+  subjects:
+  - kind: ServiceAccount
+    name: pipeline
+    namespace: faslasherin-dev
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2026-09-09T08:57:34Z"
+    name: pipelines-scc-rolebinding
+    namespace: faslasherin-dev
+    ownerReferences:
+    - apiVersion: operator.tekton.dev/v1alpha1
+      blockOwnerDeletion: true
+      controller: true
+      kind: TektonInstallerSet
+      name: rhosp-rbac-zfpkg
+      uid: f962e547-7b5b-4ccb-8e97-03e46d74dff2
+    resourceVersion: "6073576198"
+    uid: 3f4a3955-0635-4ece-867d-e078758a1615
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: pipelines-scc-clusterrole
+  subjects:
+  - kind: ServiceAccount
+    name: pipeline
+    namespace: faslasherin-dev
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      openshift.io/description: Allows deploymentconfigs in this namespace to rollout
+        pods in this namespace.  It is auto-managed by a controller; remove subjects
+        to disable.
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    name: system:deployers
+    namespace: faslasherin-dev
+    resourceVersion: "6073571158"
+    uid: 0d397231-030b-4f28-9629-570608f67b61
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: system:deployer
+  subjects:
+  - kind: ServiceAccount
+    name: deployer
+    namespace: faslasherin-dev
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      openshift.io/description: Allows builds in this namespace to push images to
+        this namespace.  It is auto-managed by a controller; remove subjects to disable.
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    name: system:image-builders
+    namespace: faslasherin-dev
+    resourceVersion: "6073571186"
+    uid: 52bee4b4-0930-4a7e-9495-2d862f726df1
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: system:image-builder
+  subjects:
+  - kind: ServiceAccount
+    name: builder
+    namespace: faslasherin-dev
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      openshift.io/description: Allows all pods in this namespace to pull images from
+        this namespace.  It is auto-managed by a controller; remove subjects to disable.
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    name: system:image-pullers
+    namespace: faslasherin-dev
+    resourceVersion: "6073571160"
+    uid: ce1cfe49-61d3-4531-8ed8-349f72e22649
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: system:image-puller
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: system:serviceaccounts:faslasherin-dev
+kind: List
+metadata:
+  resourceVersion: ""

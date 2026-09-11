@@ -1,0 +1,278 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"allow-from-codeready-workspaces-operator","namespace":"faslasherin-dev"},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"network.openshift.io/policy-group":"codeready-workspaces"}}}]}],"podSelector":{},"policyTypes":["Ingress"]}}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    generation: 1
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: allow-from-codeready-workspaces-operator
+    namespace: faslasherin-dev
+    resourceVersion: "6073571217"
+    uid: 4aca20cd-8d8e-402b-9354-8e3ba23a9cdd
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            network.openshift.io/policy-group: codeready-workspaces
+    podSelector: {}
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"allow-from-console-namespaces","namespace":"faslasherin-dev"},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"network.openshift.io/policy-group":"console"}}}]}],"podSelector":{},"policyTypes":["Ingress"]}}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    generation: 1
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: allow-from-console-namespaces
+    namespace: faslasherin-dev
+    resourceVersion: "6073571219"
+    uid: 312968dd-ee07-4ba9-961a-3ade8d3f769b
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            network.openshift.io/policy-group: console
+    podSelector: {}
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"allow-from-dev-sandbox-managed-ns","namespace":"faslasherin-dev"},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"dev-sandbox/policy-group":"ingress"}}}]}],"policyTypes":["Ingress"]}}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    generation: 1
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: allow-from-dev-sandbox-managed-ns
+    namespace: faslasherin-dev
+    resourceVersion: "6073571225"
+    uid: 6f4872a7-5b43-408b-ba11-e47468013887
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            dev-sandbox/policy-group: ingress
+    podSelector: {}
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"allow-from-olm-namespaces","namespace":"faslasherin-dev"},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"openshift.io/scc":"anyuid"}}}]}],"podSelector":{},"policyTypes":["Ingress"]}}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    generation: 1
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: allow-from-olm-namespaces
+    namespace: faslasherin-dev
+    resourceVersion: "6073571218"
+    uid: a38a10a7-798f-45f9-b96d-4947705e6f67
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            openshift.io/scc: anyuid
+    podSelector: {}
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"allow-from-openshift-ingress","namespace":"faslasherin-dev"},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"network.openshift.io/policy-group":"ingress"}}}]}],"podSelector":{},"policyTypes":["Ingress"]}}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    generation: 1
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: allow-from-openshift-ingress
+    namespace: faslasherin-dev
+    resourceVersion: "6073571215"
+    uid: 244c4dd6-8dbc-43ac-a71f-691a04a63628
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            network.openshift.io/policy-group: ingress
+    podSelector: {}
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"allow-from-openshift-monitoring","namespace":"faslasherin-dev"},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"network.openshift.io/policy-group":"monitoring"}}}]}],"podSelector":{},"policyTypes":["Ingress"]}}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    generation: 1
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: allow-from-openshift-monitoring
+    namespace: faslasherin-dev
+    resourceVersion: "6073571216"
+    uid: 4c09036c-0844-429b-9f22-dbd4642abdf9
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            network.openshift.io/policy-group: monitoring
+    podSelector: {}
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"allow-from-openshift-virtualization-namespaces","namespace":"faslasherin-dev"},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"kubernetes.io/metadata.name":"openshift-virtualization-os-images"}}}]},{"from":[{"namespaceSelector":{"matchLabels":{"kubernetes.io/metadata.name":"openshift-cnv"}}}]}],"podSelector":{},"policyTypes":["Ingress"]}}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    generation: 1
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: allow-from-openshift-virtualization-namespaces
+    namespace: faslasherin-dev
+    resourceVersion: "6073571220"
+    uid: 94f0f69a-1c71-40f7-996e-d1046472bfae
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            kubernetes.io/metadata.name: openshift-virtualization-os-images
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            kubernetes.io/metadata.name: openshift-cnv
+    podSelector: {}
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"allow-from-redhat-ods-app-to-mariadb","namespace":"faslasherin-dev"},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"kubernetes.io/metadata.name":"redhat-ods-applications"}},"podSelector":{"matchLabels":{"app.kubernetes.io/name":"data-science-pipelines-operator"}}}],"ports":[{"port":3306,"protocol":"TCP"}]}],"podSelector":{"matchLabels":{"app":"mariadb-dspa"}},"policyTypes":["Ingress"]}}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    generation: 1
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: allow-from-redhat-ods-app-to-mariadb
+    namespace: faslasherin-dev
+    resourceVersion: "6073571222"
+    uid: 9b2634a2-5058-4c8d-9b5c-a04fe9c25d30
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            kubernetes.io/metadata.name: redhat-ods-applications
+        podSelector:
+          matchLabels:
+            app.kubernetes.io/name: data-science-pipelines-operator
+      ports:
+      - port: 3306
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app: mariadb-dspa
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"allow-from-redhat-ods-app-to-mm","namespace":"faslasherin-dev"},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"kubernetes.io/metadata.name":"redhat-ods-applications"}}}]}],"podSelector":{"matchLabels":{"modelmesh-service":"modelmesh-serving"}},"policyTypes":["Ingress"]}}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    generation: 1
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: allow-from-redhat-ods-app-to-mm
+    namespace: faslasherin-dev
+    resourceVersion: "6073571224"
+    uid: d4cf2113-4f07-4300-bd43-308cb0147016
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            kubernetes.io/metadata.name: redhat-ods-applications
+    podSelector:
+      matchLabels:
+        modelmesh-service: modelmesh-serving
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      toolchain.dev.openshift.com/last-applied-configuration: '{"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"toolchain.dev.openshift.com/provider":"codeready-toolchain","toolchain.dev.openshift.com/space":"faslasherin"},"name":"allow-same-namespace","namespace":"faslasherin-dev"},"spec":{"ingress":[{"from":[{"podSelector":{}}]}],"podSelector":{}}}'
+    creationTimestamp: "2026-09-09T08:56:06Z"
+    generation: 1
+    labels:
+      toolchain.dev.openshift.com/provider: codeready-toolchain
+      toolchain.dev.openshift.com/space: faslasherin
+    name: allow-same-namespace
+    namespace: faslasherin-dev
+    resourceVersion: "6073571212"
+    uid: ea7bebba-cc25-4838-82fd-e23e1f652e7c
+  spec:
+    ingress:
+    - from:
+      - podSelector: {}
+    podSelector: {}
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"linux-skill-assessment-network-policy","namespace":"faslasherin-dev"},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"network.openshift.io/policy-group":"ingress"}}}],"ports":[{"port":8080,"protocol":"TCP"}]},{"from":[{"podSelector":{}}],"ports":[{"port":8080,"protocol":"TCP"}]}],"podSelector":{"matchLabels":{"app":"linux-skill-assessment"}},"policyTypes":["Ingress"]}}
+    creationTimestamp: "2026-09-11T07:10:09Z"
+    generation: 1
+    name: linux-skill-assessment-network-policy
+    namespace: faslasherin-dev
+    resourceVersion: "6082695970"
+    uid: 6467a557-92cc-4e2e-842b-8df661e59467
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            network.openshift.io/policy-group: ingress
+      ports:
+      - port: 8080
+        protocol: TCP
+    - from:
+      - podSelector: {}
+      ports:
+      - port: 8080
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app: linux-skill-assessment
+    policyTypes:
+    - Ingress
+kind: List
+metadata:
+  resourceVersion: ""

@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: linux-skill-assessment
+  namespace: faslasherin-dev
+  labels:
+    app: linux-skill-assessment
+    app.kubernetes.io/component: linux-skill-assessment
+    app.kubernetes.io/instance: linux-skill-assessment
+    app.kubernetes.io/name: linux-skill-assessment
+    app.kubernetes.io/part-of: linux-skill-assessment-app
+spec:
+  ports:
+  - name: 8080-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: linux-skill-assessment
+    deployment: linux-skill-assessment
+  sessionAffinity: None
+  type: ClusterIP
